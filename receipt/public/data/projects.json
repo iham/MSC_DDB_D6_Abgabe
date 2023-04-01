@@ -1,0 +1,19 @@
+{
+    "project_1" : {
+        "name": "Project 1",
+        "active": true
+    },
+    "project_2" : {
+        "name": "Project 2",
+        "active": true
+    },
+    "project_3" : {
+        "name": "Project 3",
+        "active": false
+    },
+    "project_4" : {
+        "name": "Project 4",
+        "active": true
+    }
+    
+}

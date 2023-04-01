@@ -15,7 +15,7 @@ This will start the project and you can visit it by opening a browser window by 
 ~20h were used to create this project.
 
 ## Development Browser
-- Firefox Developer Edition (version 111)
+Firefox Developer Edition (version 111)
 
 
 ## Libraries used
