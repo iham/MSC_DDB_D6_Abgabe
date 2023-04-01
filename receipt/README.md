@@ -2,16 +2,18 @@
 
 ## Install & Run
 After unpack change into project directory and run:
-´´´
+
+```bash
 yarn install
-´´´
-´´´
+```
+
+```bash
 yarn start
-´´´
+```
 This will start the project and you can visit it by opening a browser window by entering ```localhost:3000```
 
 
-# Time spent
+## Time spent
 ~20h were used to create this project.
 
 ## Development Browser
