@@ -39,7 +39,7 @@ class Receipt {
         return this.#ust;
     }
     get grossVal() {
-        return this.netVal + (this.netVal/100 * this.ust);
+        return this.netVal + (this.netVal/100) * this.ust;
     }
     get comment() {
         return this.#comment;
