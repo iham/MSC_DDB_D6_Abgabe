@@ -56,12 +56,14 @@ class Receipt {
         this.#project = project;
     }
     set netVal(netVal) {
-        this.#netVal = netVal;
+        this.#netVal = parseFloat(netVal);
     }
     set ust(ust) {
-        this.#ust = ust;
+        this.#ust = parseInt(ust);
     }
     set comment(comment) {
+        if (typeof comment === 'number');
+            comment = ''
         this.#comment = comment;
     }
 }

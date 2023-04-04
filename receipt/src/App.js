@@ -70,10 +70,16 @@ const App = props => {
       {showReceiptForm &&
         <ReceiptForm
           toggleShowReceiptForm={toggleShowReceiptForm}
-          handleSaveReceipt={handleSaveReceipt} />
+          handleSaveReceipt={handleSaveReceipt}
+          projectTypes={projectTypes}
+          ustTypes={ustTypes}
+        />
       }
       {receipts.length > 0 && 
-        <ReceiptList handleDeleteReceipt={handleDeleteReceipt} receipts={receipts}/>
+        <ReceiptList
+          handleDeleteReceipt={handleDeleteReceipt}
+          receipts={receipts}
+        />
       }
     </div>
   );
