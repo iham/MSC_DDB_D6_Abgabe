@@ -3,6 +3,7 @@ import { BsFillGearFill } from "react-icons/bs";
 
 const ReceiptList = props => {
     const { receipts } = props;
+    const sum = receipts.reduce((acc, v) => acc+v.netVal, 0.0)
     return (
         <>
             <h2>Receipt List:</h2>
@@ -26,6 +27,13 @@ const ReceiptList = props => {
                         return <ReceiptItem key={`receipt-list-item-${key}`} itemNum={key + 1} receipt={item} handleDeleteReceipt={props.handleDeleteReceipt} />
                     })}
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td className="text-end" colSpan={4}>Total</td>
+                        <td className="text-end" >€ {sum.toFixed(2)}</td>
+                        <td className="text-end" colSpan={4}></td>
+                    </tr>
+                </tfoot>
             </table>
         </>
     )
