@@ -24,9 +24,9 @@ const App = props => {
     fetchProjects(); 
     // loading UST types
     const fetchUST = async () => {
-      const result = await fetch("/data/ust.json");
-      const dataJson = await result.json();
-      setUSTTypes([...dataJson]);
+        const result = await fetch("/data/ust.json");
+        const dataJson = await result.json();
+        setUSTTypes([...dataJson]);
     };
     fetchUST(); 
   }, []);

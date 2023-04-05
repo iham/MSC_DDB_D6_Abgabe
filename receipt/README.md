@@ -21,12 +21,14 @@ Firefox Developer Edition (version 111)
 
 
 ## Libraries used
-| Name              | Version | License | URL |
-|-------------------|---------|---------|-----|
-| echarts-for-react | ^3.0.2  |         |     |
-| echarts           | ^5.4.2  |         |     |
-| react             | ^18.2.0 |         |     |
-| react-icons       | ^5.2.3  |         |     |
-| react-router-dom  | ^6.10.0 |         |     |
-| bootstrap         | ^5.2.3  |         |     |
-| cross-env         | 7.0.3   |         |     |
+| Name              | Version | License            | URL |
+|-------------------|---------|--------------------|-----|
+| echarts           | ^5.4.2  | Apache License 2.0 | [blub](https://google.com)    |
+| echarts-for-react | ^3.0.2  |                    |     |
+| faker-js          | ^7.6.0  |                    |     |
+| react             | ^18.2.0 |                    |     |
+| react-datepicker  | ^4.11.0 |                    |     |
+| react-icons       | ^5.2.3  |                    |     |
+| react-router-dom  | ^6.10.0 |                    |     |
+| bootstrap         | ^5.2.3  |                    |     |
+| cross-env         | ^7.0.3  |                    |     |

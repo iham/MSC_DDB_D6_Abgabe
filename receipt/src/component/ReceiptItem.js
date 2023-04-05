@@ -1,7 +1,7 @@
 import {BsFillTrashFill} from 'react-icons/bs';
 
 const ReceiptItem = props => {
-    const {receipt, itemNum} = props
+    const {receipt, itemNum} = props;
     return (
         <tr className={receipt.netVal>400?'table-danger':''}>
             <td>{itemNum}</td>

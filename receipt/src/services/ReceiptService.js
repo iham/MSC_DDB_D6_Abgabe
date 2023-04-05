@@ -24,7 +24,6 @@ class ReceiptService {
         // sort dates descending
         this.#receipts.sort((a,b) => b.receiptDate - a.receiptDate);
     }
-
 }
 
 export default ReceiptService;

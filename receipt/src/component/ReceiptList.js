@@ -3,7 +3,7 @@ import { BsFillGearFill } from "react-icons/bs";
 
 const ReceiptList = props => {
     const { receipts } = props;
-    const sum = receipts.reduce((acc, v) => acc+v.netVal, 0.0)
+    const sum = receipts.reduce((acc, v) => acc+v.netVal, 0.0);
     return (
         <>
             <h2>Receipt List:</h2>

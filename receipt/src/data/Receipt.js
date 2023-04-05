@@ -63,7 +63,7 @@ class Receipt {
     }
     set comment(comment) {
         if (typeof comment === 'number');
-            comment = ''
+            comment = '';
         this.#comment = comment;
     }
 }
