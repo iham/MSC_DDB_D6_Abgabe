@@ -29,3 +29,4 @@ Firefox Developer Edition (version 111)
 | react-icons       | ^5.2.3  |         |     |
 | react-router-dom  | ^6.10.0 |         |     |
 | bootstrap         | ^5.2.3  |         |     |
+| cross-env         | 7.0.3   |         |     |

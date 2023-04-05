@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
@@ -71,7 +71,7 @@ const ReceiptForm = props => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="project" className="form-label">Project</label>
-                    <select className="form-control"
+                    <select className="form-select"
                         name="project"
                         id="project"
                         value={state.project}
@@ -102,7 +102,7 @@ const ReceiptForm = props => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="ust" className="form-label">UST</label>
-                    <select className="form-control"
+                    <select className="form-select"
                         name="ust"
                         id="ust"
                         value={state.ust}
@@ -129,8 +129,6 @@ const ReceiptForm = props => {
                     <textarea className="form-control"
                         name="comment"
                         id="comment"
-                        cols="30"
-                        rows="10"
                         onChange={evt => handleInput(evt)}
                         value={state.comment}
                         ></textarea>
