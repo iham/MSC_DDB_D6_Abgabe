@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect, useState } from 'react';
 import ReceiptForm from './component/ReceiptForm';
 import ReceiptList from './component/ReceiptList';
@@ -7,8 +6,8 @@ import ReceiptService from './services/ReceiptService';
 import SampleDataService from './services/SampleDataService';
 
 const App = props => {
-  const [projectTypes, setProjectTypes] =  useState([]);
-  const [ustTypes, setUSTTypes] =  useState([]);
+  const [projectTypes, setProjectTypes] = useState([]);
+  const [ustTypes, setUSTTypes] = useState([]);
   const [receiptService, setReceiptService] = useState(new ReceiptService());
   const [receipts, setReceipts] = useState(receiptService.receipts);
   const [showReceiptForm, setShowReceiptForm] = useState(false);
@@ -17,28 +16,28 @@ const App = props => {
   useEffect(() => {
     // loading project types
     const fetchProjects = async () => {
-        const result = await fetch("/data/projects.json");
-        const dataJson = await result.json();
-        setProjectTypes([...dataJson]);
+      const result = await fetch("/data/projects.json");
+      const dataJson = await result.json();
+      setProjectTypes([...dataJson]);
     };
-    fetchProjects(); 
+    fetchProjects();
     // loading UST types
     const fetchUST = async () => {
-        const result = await fetch("/data/ust.json");
-        const dataJson = await result.json();
-        setUSTTypes([...dataJson]);
+      const result = await fetch("/data/ust.json");
+      const dataJson = await result.json();
+      setUSTTypes([...dataJson]);
     };
-    fetchUST(); 
+    fetchUST();
   }, []);
 
   const handleCreateSampleReceipts = () => {
-      SampleDataService(
-        receiptService,
-        projectTypes,
-        ustTypes,
-        100
-      )
-      setReceipts([...receiptService.receipts]);
+    SampleDataService(
+      receiptService,
+      projectTypes,
+      ustTypes,
+      100
+    )
+    setReceipts([...receiptService.receipts]);
   }
   const handleDeleteReceipt = (receipt) => {
     receiptService.remove(receipt);
@@ -56,31 +55,35 @@ const App = props => {
   }
 
   return (
-    <div className='container mt-5 mb-5'>
-      <h1>Receipt Collector Demo</h1>
-      <p>As for this Proof of Concept, you can add Receipts on your own or create Samples to view data representation.</p>
-      {!showReceiptForm &&
-        <>
-          <button className='btn btn-success m-3'
-            onClick={evt => setShowReceiptForm(!showReceiptForm)}>Create Receipt</button>
-          <button className='btn btn-warning m-3'
-            onClick={evt => handleCreateSampleReceipts()}>Create Receipts using Sample Data</button>
-        </>
-      }
-      {showReceiptForm &&
-        <ReceiptForm
-          toggleShowReceiptForm={toggleShowReceiptForm}
-          handleSaveReceipt={handleSaveReceipt}
-          projectTypes={projectTypes}
-          ustTypes={ustTypes}
-        />
-      }
-      {receipts.length > 0 && 
-        <ReceiptList
-          handleDeleteReceipt={handleDeleteReceipt}
-          receipts={receipts}
-        />
-      }
+    <div className='container mt-5 mb-5' data-bs-theme="dark">
+      <div className="row">
+        <div className="col-6">
+          <h1>Receipt Collector Demo</h1>
+          <p>As for this Proof of Concept, you can add Receipts on your own or create Samples to view data representation.</p>
+          {!showReceiptForm &&
+            <>
+              <button className='btn btn-success m-3'
+                onClick={evt => setShowReceiptForm(!showReceiptForm)}>Create Receipt</button>
+              <button className='btn btn-warning m-3'
+                onClick={evt => handleCreateSampleReceipts()}>Create Receipts using Sample Data</button>
+            </>
+          }
+          {showReceiptForm &&
+            <ReceiptForm
+              toggleShowReceiptForm={toggleShowReceiptForm}
+              handleSaveReceipt={handleSaveReceipt}
+              projectTypes={projectTypes}
+              ustTypes={ustTypes}
+            />
+          }
+          {receipts.length > 0 &&
+            <ReceiptList
+              handleDeleteReceipt={handleDeleteReceipt}
+              receipts={receipts}
+            />
+          }
+        </div>
+      </div>
     </div>
   );
 }
