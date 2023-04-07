@@ -67,6 +67,16 @@ class Receipt {
         this.#comment = comment;
     }
 
+    // we need to compare the object on a field level in order to find its index in a list
+    compareReceipt(receipt) {
+        return (this.receiptDate.getTime() === receipt.receiptDate.getTime() &&
+            this.description === receipt.description &&
+            this.project === receipt.project &&
+            this.netVal === receipt.netVal &&
+            this.ust === receipt.ust &&
+            this.comment === receipt.comment);
+
+    }
     toJSON() {
         return {
             receiptDate: this.receiptDate,

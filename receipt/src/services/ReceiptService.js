@@ -17,9 +17,8 @@ class ReceiptService {
 
     remove(receipt) {
         this.#receipts.splice(
-            this.#receipts.indexOf(receipt), 1
+            this.#receipts.findIndex((item) => item.compareReceipt(receipt)), 1
         );
-        this.#sortReceiptsByDate();
     }
     set receipts (receipts) {
         this.#receipts = receipts;
