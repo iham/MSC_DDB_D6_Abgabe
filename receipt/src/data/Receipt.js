@@ -66,6 +66,17 @@ class Receipt {
             comment = '';
         this.#comment = comment;
     }
+
+    toJSON() {
+        return {
+            receiptDate: this.receiptDate,
+            description: this.description,
+            project: this.project,
+            netVal: this.netVal,
+            ust: this.ust,
+            comment: this.comment,
+        };
+    }
 }
 
 export default Receipt;

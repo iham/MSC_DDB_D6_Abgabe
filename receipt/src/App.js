@@ -3,15 +3,17 @@ import ReceiptForm from './component/ReceiptForm';
 import ReceiptList from './component/ReceiptList';
 
 import ReceiptService from './services/ReceiptService';
+import ReceiptStorageService from './services/ReceiptStorageService';
 import SampleDataService from './services/SampleDataService';
 
 const App = props => {
   const [projectTypes, setProjectTypes] = useState([]);
   const [ustTypes, setUSTTypes] = useState([]);
   const [receiptService, setReceiptService] = useState(new ReceiptService());
+  const receiptStorageService = new ReceiptStorageService(receiptService);
   const [receipts, setReceipts] = useState(receiptService.receipts);
   const [showReceiptForm, setShowReceiptForm] = useState(false);
-
+  // debugger
   // load data ONCE
   useEffect(() => {
     // loading project types
@@ -28,6 +30,7 @@ const App = props => {
       setUSTTypes([...dataJson]);
     };
     fetchUST();
+    // debugger
   }, []);
 
   const handleCreateSampleReceipts = () => {
@@ -38,10 +41,12 @@ const App = props => {
       100
     )
     setReceipts([...receiptService.receipts]);
+    receiptStorageService.save();
   }
   const handleDeleteReceipt = (receipt) => {
     receiptService.remove(receipt);
     setReceipts([...receiptService.receipts]);
+    receiptStorageService.save();
   }
 
   const toggleShowReceiptForm = () => {
@@ -51,6 +56,7 @@ const App = props => {
   const handleSaveReceipt = (receipt) => {
     receiptService.add(receipt);
     setReceipts([...receiptService.receipts]);
+    receiptStorageService.save();
     toggleShowReceiptForm();
   }
 

@@ -9,6 +9,7 @@ class ReceiptService {
         return this.#receipts;
     }
 
+
     add(receipt) {
         this.#receipts.push(receipt);
         this.#sortReceiptsByDate();
@@ -18,6 +19,10 @@ class ReceiptService {
         this.#receipts.splice(
             this.#receipts.indexOf(receipt), 1
         );
+        this.#sortReceiptsByDate();
+    }
+    set receipts (receipts) {
+        this.#receipts = receipts;
         this.#sortReceiptsByDate();
     }
     #sortReceiptsByDate() {
