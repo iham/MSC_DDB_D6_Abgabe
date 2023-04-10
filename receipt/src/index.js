@@ -7,7 +7,10 @@ import reportWebVitals from './reportWebVitals';
 
 import ErrorPage from './ErrorPage';
 import InfoPage from './InfoPage';
+import StartPage from './StartPage';
+import StatsPage from './StatsPage';
 import ProjectsPage from './ProjectsPage'
+import ReceiptsPage from './ReceiptsPage'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
@@ -20,6 +23,18 @@ const router = createBrowserRouter([
     children: [
       {
         children: [
+          {
+            path:"/",
+            element: <StartPage />,
+          },
+          {
+            path:"/receipts",
+            element:<ReceiptsPage />,
+          },
+          {
+            path:"/stats",
+            element:<StatsPage />,
+          },
           {
             path:"/info",
             element:<InfoPage />,

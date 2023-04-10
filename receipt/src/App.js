@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
-import ReceiptForm from './component/ReceiptForm';
-import ReceiptList from './component/ReceiptList';
 
 import ReceiptService from './services/ReceiptService';
 import ReceiptStorageService from './services/ReceiptStorageService';
-import SampleDataService from './services/SampleDataService';
+
 import { Outlet, NavLink } from 'react-router-dom';
 
 const App = props => {
@@ -13,7 +11,6 @@ const App = props => {
   const [receiptService, setReceiptService] = useState(new ReceiptService());
   const receiptStorageService = new ReceiptStorageService(receiptService);
   const [receipts, setReceipts] = useState(receiptService.receipts);
-  const [showReceiptForm, setShowReceiptForm] = useState(false);
 
   // load data ONCE
   useEffect(() => {
@@ -31,35 +28,7 @@ const App = props => {
       setUSTTypes([...dataJson]);
     };
     fetchUST();
-    // debugger
   }, []);
-
-  const handleCreateSampleReceipts = () => {
-    SampleDataService(
-      receiptService,
-      projectTypes,
-      ustTypes,
-      100
-    )
-    setReceipts([...receiptService.receipts]);
-    receiptStorageService.save();
-  }
-  const handleDeleteReceipt = (receipt) => {
-    receiptService.remove(receipt);
-    setReceipts([...receiptService.receipts]);
-    receiptStorageService.save();
-  }
-
-  const toggleShowReceiptForm = () => {
-    setShowReceiptForm(!showReceiptForm);
-  }
-
-  const handleSaveReceipt = (receipt) => {
-    receiptService.add(receipt);
-    setReceipts([...receiptService.receipts]);
-    receiptStorageService.save();
-    toggleShowReceiptForm();
-  }
 
   return (
     <>
@@ -73,8 +42,14 @@ const App = props => {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <NavLink className="nav-link"
-                  to="/">
-                    Home
+                  to="/receipts">
+                    Receipts
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link"
+                  to="/stats">
+                    Stats
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -94,37 +69,7 @@ const App = props => {
         </div>
       </nav>
       <div className='container mt-5 mb-5'>
-        <Outlet />
-      </div>
-      <div className='container mt-5 mb-5'>
-        <div className="row">
-          <div className="col-6">
-            <h1>Receipt Collector Demo</h1>
-            <p>As for this Proof of Concept, you can add Receipts on your own or create Samples to view data representation.</p>
-            {!showReceiptForm &&
-              <>
-                <button className='btn btn-success m-3'
-                  onClick={evt => setShowReceiptForm(!showReceiptForm)}>Create Receipt</button>
-                <button className='btn btn-warning m-3'
-                  onClick={evt => handleCreateSampleReceipts()}>Create Receipts using Sample Data</button>
-              </>
-            }
-            {showReceiptForm &&
-              <ReceiptForm
-                toggleShowReceiptForm={toggleShowReceiptForm}
-                handleSaveReceipt={handleSaveReceipt}
-                projectTypes={projectTypes}
-                ustTypes={ustTypes}
-              />
-            }
-            {receipts.length > 0 &&
-              <ReceiptList
-                handleDeleteReceipt={handleDeleteReceipt}
-                receipts={receipts}
-              />
-            }
-          </div>
-        </div>
+        <Outlet context={[projectTypes, ustTypes, receiptService, receiptStorageService, receipts, setReceipts]} />
       </div>
     </>
   );
