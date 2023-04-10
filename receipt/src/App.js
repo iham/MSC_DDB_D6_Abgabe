@@ -5,10 +5,9 @@ import ReceiptList from './component/ReceiptList';
 import ReceiptService from './services/ReceiptService';
 import ReceiptStorageService from './services/ReceiptStorageService';
 import SampleDataService from './services/SampleDataService';
-import { Outlet, NavLink, useLocation } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 
 const App = props => {
-  const locationPath = useLocation()?.pathname;
   const [projectTypes, setProjectTypes] = useState([]);
   const [ustTypes, setUSTTypes] = useState([]);
   const [receiptService, setReceiptService] = useState(new ReceiptService());
@@ -72,14 +71,24 @@ const App = props => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              {[{ name: 'Home', path: '/' }, { name: 'Projects', path: '/projects' }, { name: 'Info', path: '/info' }].map((item, key) => {
-                return <li key={'nav-item-key-' + key} className="nav-item">
-                  <NavLink
-                    to={item.path}
-                    className="nav-link"
-                    aria-current={locationPath === item.path ? 'page' : undefined}>{item.name}</NavLink>
-                </li>
-              })}
+              <li className="nav-item">
+                <NavLink className="nav-link"
+                  to="/">
+                    Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link"
+                  to="/projects">
+                    Projects
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link"
+                  to="/info">
+                    Info
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
