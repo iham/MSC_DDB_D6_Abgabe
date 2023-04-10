@@ -5,7 +5,7 @@ import ReceiptList from './component/ReceiptList';
 import ReceiptService from './services/ReceiptService';
 import ReceiptStorageService from './services/ReceiptStorageService';
 import SampleDataService from './services/SampleDataService';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, NavLink, useLocation } from 'react-router-dom';
 
 const App = props => {
   const locationPath = useLocation()?.pathname;
@@ -66,21 +66,20 @@ const App = props => {
     <>
       <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">Receipt Collector</a>
+          <NavLink className="navbar-brand" to="/">Receipt Collector</NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className={`nav-link ${locationPath === "/" ? "active": ''}`} aria-current="page" href="/">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className={`nav-link ${locationPath === "/info" ? "active": ''}`} href="/info">Info</a>
-              </li>
-              <li className="nav-item">
-                <a className={`nav-link ${locationPath === "/projects" ? "active": ''}`} href="/projects">Projects</a>
-              </li>
+              {[{ name: 'Home', path: '/' }, { name: 'Projects', path: '/projects' }, { name: 'Info', path: '/info' }].map((item, key) => {
+                return <li key={'nav-item-key-' + key} className="nav-item">
+                  <NavLink
+                    to={item.path}
+                    className="nav-link"
+                    aria-current={locationPath === item.path ? 'page' : undefined}>{item.name}</NavLink>
+                </li>
+              })}
             </ul>
           </div>
         </div>
