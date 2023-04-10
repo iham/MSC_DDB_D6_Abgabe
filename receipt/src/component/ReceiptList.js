@@ -21,7 +21,7 @@ const ReceiptList = props => {
                         <th scope="col">Date</th>
                         <th scope="col">Project</th>
                         <th scope="col" className="text-end">Net</th>
-                        <th scope="col" className="text-center"><BsFillGearFill /></th>
+                        <th scope="col" className="text-center" colSpan={2}><BsFillGearFill /></th>
                     </tr>
                 </thead>
                 <tbody className="table-group-divider">
@@ -40,7 +40,7 @@ const ReceiptList = props => {
                     <tr>
                         <td className="text-end" colSpan={3}>Total</td>
                         <td className="text-end" >€ {sum.toFixed(2)}</td>
-                        <td className="text-end"></td>
+                        <td className="text-end" colSpan={2}></td>
                     </tr>
                 </tfoot>
             </table>

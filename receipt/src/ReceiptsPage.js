@@ -41,7 +41,7 @@ const Receipts = (props) => {
     return (
         <>
             <h1>Receipts</h1>
-
+            <p>Either you enter a new Receipt by hitting the button, or you create a set of 10 sampled Receipts</p>
             <div className="row">
                 <div className="col-6">
                     {!showReceiptForm &&

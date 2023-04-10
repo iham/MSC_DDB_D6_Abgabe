@@ -16,6 +16,8 @@ const ReceiptListItem = props => {
                     onClick={(evt) => props.handleSelectDisplayReceipt(receipt)}>
                     <BsFileText/>
                 </button>
+            </td>
+            <td className="text-center">
                 <button className='btn p-0' onClick={(evt) => props.handleDeleteReceipt(receipt)}><BsFillTrashFill/></button>
             </td>
         </tr>
