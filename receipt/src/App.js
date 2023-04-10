@@ -5,15 +5,17 @@ import ReceiptList from './component/ReceiptList';
 import ReceiptService from './services/ReceiptService';
 import ReceiptStorageService from './services/ReceiptStorageService';
 import SampleDataService from './services/SampleDataService';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
 const App = props => {
+  const locationPath = useLocation()?.pathname;
   const [projectTypes, setProjectTypes] = useState([]);
   const [ustTypes, setUSTTypes] = useState([]);
   const [receiptService, setReceiptService] = useState(new ReceiptService());
   const receiptStorageService = new ReceiptStorageService(receiptService);
   const [receipts, setReceipts] = useState(receiptService.receipts);
   const [showReceiptForm, setShowReceiptForm] = useState(false);
-  // debugger
+
   // load data ONCE
   useEffect(() => {
     // loading project types
@@ -61,36 +63,62 @@ const App = props => {
   }
 
   return (
-    <div className='container mt-5 mb-5' data-bs-theme="dark">
-      <div className="row">
-        <div className="col-6">
-          <h1>Receipt Collector Demo</h1>
-          <p>As for this Proof of Concept, you can add Receipts on your own or create Samples to view data representation.</p>
-          {!showReceiptForm &&
-            <>
-              <button className='btn btn-success m-3'
-                onClick={evt => setShowReceiptForm(!showReceiptForm)}>Create Receipt</button>
-              <button className='btn btn-warning m-3'
-                onClick={evt => handleCreateSampleReceipts()}>Create Receipts using Sample Data</button>
-            </>
-          }
-          {showReceiptForm &&
-            <ReceiptForm
-              toggleShowReceiptForm={toggleShowReceiptForm}
-              handleSaveReceipt={handleSaveReceipt}
-              projectTypes={projectTypes}
-              ustTypes={ustTypes}
-            />
-          }
-          {receipts.length > 0 &&
-            <ReceiptList
-              handleDeleteReceipt={handleDeleteReceipt}
-              receipts={receipts}
-            />
-          }
+    <>
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">Receipt Collector</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className={`nav-link ${locationPath === "/" ? "active": ''}`} aria-current="page" href="/">Home</a>
+              </li>
+              <li className="nav-item">
+                <a className={`nav-link ${locationPath === "/info" ? "active": ''}`} href="/info">Info</a>
+              </li>
+              <li className="nav-item">
+                <a className={`nav-link ${locationPath === "/projects" ? "active": ''}`} href="/projects">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className='container mt-5 mb-5'>
+        <Outlet />
+      </div>
+      <div className='container mt-5 mb-5'>
+        <div className="row">
+          <div className="col-6">
+            <h1>Receipt Collector Demo</h1>
+            <p>As for this Proof of Concept, you can add Receipts on your own or create Samples to view data representation.</p>
+            {!showReceiptForm &&
+              <>
+                <button className='btn btn-success m-3'
+                  onClick={evt => setShowReceiptForm(!showReceiptForm)}>Create Receipt</button>
+                <button className='btn btn-warning m-3'
+                  onClick={evt => handleCreateSampleReceipts()}>Create Receipts using Sample Data</button>
+              </>
+            }
+            {showReceiptForm &&
+              <ReceiptForm
+                toggleShowReceiptForm={toggleShowReceiptForm}
+                handleSaveReceipt={handleSaveReceipt}
+                projectTypes={projectTypes}
+                ustTypes={ustTypes}
+              />
+            }
+            {receipts.length > 0 &&
+              <ReceiptList
+                handleDeleteReceipt={handleDeleteReceipt}
+                receipts={receipts}
+              />
+            }
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
