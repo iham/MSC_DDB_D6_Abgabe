@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
@@ -8,6 +8,7 @@ registerLocale('de', de);
 setDefaultLocale('de');
 
 const ReceiptForm = props => {
+    // safe form fields as states to handle changes and pass them to a receipt obj
     const [state, setState] = useState({
         receiptDate: new Date(),
         description: '',
@@ -17,14 +18,24 @@ const ReceiptForm = props => {
         grossVal: 0,
         comment: '',
     });
-    const [disabledSubmit, setDisabledSubmit] = useState(true);
-    const [receipt, setReceipt] = useState(new Receipt(...Object.values(state)));
+    // next to the fields we need a receipt object to calc grossVal
+    const [receipt, setReceipt] = useState(new Receipt(
+        state.receiptDate,
+        state.description,
+        state.project,
+        state.netVal,
+        state.ust,
+        state.comment)
+    );
 
+    const [disabledSubmit, setDisabledSubmit] = useState(true);
+            
     const handleInput = (evt) => {
-        let item = state;
-        receipt[evt.target.name] = item[evt.target.name] = evt.target.value;
+        // we need both updated ... state for display, receipt for calculations
+        state[evt.target.name] = evt.target.value;
+        receipt[evt.target.name] = state[evt.target.name];
+        setState({...state});
         setReceipt(receipt);
-        setState({...item});
 
         // enable saving if requirements are fullfilled
         if (state.receiptDate && state.description && state.netVal && state.ust)
@@ -34,14 +45,17 @@ const ReceiptForm = props => {
     }
 
     const handleDateInput = (date) => {
+        // we need both updated ... state for display, receipt for calculations
         const item = state;
-        receipt["receiptDate"] = item["receiptDate"] = date;
+        item["receiptDate"] = date;
+        receipt["receiptDate"] = date;
         setState({...item});
+        setReceipt(receipt);
     }
 
     const handleSave = (evt) => {
         evt.preventDefault();
-        props.handleSaveReceipt(receipt)
+        props.handleSaveReceipt(receipt);
     }
 
     return (

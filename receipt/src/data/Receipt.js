@@ -62,8 +62,6 @@ class Receipt {
         this.#ust = parseInt(ust);
     }
     set comment(comment) {
-        if (typeof comment === 'number');
-            comment = '';
         this.#comment = comment;
     }
 
