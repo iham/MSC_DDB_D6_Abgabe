@@ -1,13 +1,42 @@
 const InfoPage = (props) => {
     return (
         <>
-            <h1>Info Page</h1>
-            <p>MSC DDB D6 - Team International</p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis dolore voluptas temporibus, deserunt iusto minus neque sapiente iure commodi molestiae provident! Fugiat magnam repellendus, impedit sed facere error soluta? Minima!
+            <header>
+                <hgroup>
+                    <h1>Info Page</h1>
+                    <h4 className="mb-5">MSC DDB D6</h4>
+                </hgroup>
+            </header>
+            <p className="lead">
+                This project was developed by Group International
             </p>
+            <div className="row">
+                <div className="col-md-6">
+                    <table className="table table-bordered rounded table-dark">
+                        <thead className="table-light">
+                            <tr>
+                                <th scope="col">Group International</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Eric Langer</td>
+                            </tr>
+                            <tr>
+                                <td>Felix Ossmann</td>
+                            </tr>
+                            <tr>
+                                <td>Hannes Brottrager</td>
+                            </tr>
+                            <tr>
+                                <td>Markus Hilbert</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </>
     );
 };
 
-export default InfoPage
+export default InfoPage;

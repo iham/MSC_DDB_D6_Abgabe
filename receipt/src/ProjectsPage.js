@@ -4,8 +4,13 @@ const Projects = (props) => {
     const [projectTypes] = useOutletContext();
     return (
         <>
-            <h1>Projects</h1>
-            <p>
+            <header>
+                <hgroup>
+                    <h1>Projects</h1>
+                    <h4 className="mb-5">MSC DDB D6</h4>
+                </hgroup>
+            </header>
+            <p className="lead">
                 A List of the Projects you can assign Receipts to:
             </p>
             {projectTypes && 

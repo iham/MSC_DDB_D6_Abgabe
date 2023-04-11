@@ -40,8 +40,13 @@ const Receipts = (props) => {
 
     return (
         <>
-            <h1>Receipts</h1>
-            <p>Either you enter a new Receipt by hitting the green button, or you create a set of 10 sampled Receipts using the yellow one.</p>
+            <header>
+                <hgroup>
+                    <h1>Receipts</h1>
+                    <h4 className="mb-5">MSC DDB D6</h4>
+                </hgroup>
+            </header>
+            <p className="lead">Either you enter a new Receipt by hitting the green button, or you create a set of 10 sampled Receipts using the yellow one.</p>
             <div className="row gx-5">
                 <div className="col-sm-12 col-lg-6">
                     {!showReceiptForm &&
