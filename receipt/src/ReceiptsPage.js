@@ -12,38 +12,38 @@ const Receipts = (props) => {
 
     const handleCreateSampleReceipts = () => {
         SampleDataService(
-          receiptService,
-          projectTypes,
-          ustTypes,
-          10
+            receiptService,
+            projectTypes,
+            ustTypes,
+            10
         )
         setReceipts([...receiptService.receipts]);
         receiptStorageService.save();
-      }
-      const handleDeleteReceipt = (receipt) => {
+    }
+    const handleDeleteReceipt = (receipt) => {
         receiptService.remove(receipt);
         setReceipts([...receiptService.receipts]);
         receiptStorageService.save();
-      }
-    
-      const toggleShowReceiptForm = () => {
+    }
+
+    const toggleShowReceiptForm = () => {
         setShowReceiptForm(!showReceiptForm);
-      }
-    
-      const handleSaveReceipt = (receipt) => {
+    }
+
+    const handleSaveReceipt = (receipt) => {
         receiptService.add(receipt);
         setReceipts([...receiptService.receipts]);
         receiptStorageService.save();
         toggleShowReceiptForm();
-      }
-    
+    }
+
 
     return (
         <>
             <h1>Receipts</h1>
             <p>Either you enter a new Receipt by hitting the green button, or you create a set of 10 sampled Receipts using the yellow one.</p>
-            <div className="row">
-                <div className="col-6">
+            <div className="row gx-5">
+                <div className="col-sm-12 col-lg-6">
                     {!showReceiptForm &&
                         <>
                             <button className='btn btn-success m-3'
@@ -60,12 +60,12 @@ const Receipts = (props) => {
                             ustTypes={ustTypes}
                         />
                     }
-                    {receipts.length > 0 &&
-                        <ReceiptList
-                            handleDeleteReceipt={handleDeleteReceipt}
-                            receipts={receipts}
-                        />
-                    }
+                </div>
+                <div className="col-sm-12 col-lg-6">
+                    <ReceiptList
+                        handleDeleteReceipt={handleDeleteReceipt}
+                        receipts={receipts}
+                    />
                 </div>
             </div>
 
