@@ -21,9 +21,9 @@ const ReceiptItemModal = (props) => {
                             {date && <p>Date: {date}</p>}
                             {description && <p>Description: {description}</p>}
                             {project && <p>Project: {project}</p>}
-                            {netVal && <p>NetVal: {netVal}</p>}
-                            {ust && <p>UST: {ust}%</p>}
-                            {grossVal && <p>GrossVal: {grossVal}</p>}
+                            {netVal && <p>NetVal: € {netVal}</p>}
+                            {ust >= 0 && <p>UST: {ust}%</p>}
+                            {grossVal && <p>GrossVal: € {grossVal}</p>}
                             {comment && <p>Comment: {comment}</p>}
                             </>
                         }

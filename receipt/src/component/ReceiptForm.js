@@ -15,18 +15,16 @@ const ReceiptForm = props => {
         project: '',
         netVal: 0,
         ust: props.ustTypes[0].value,
-        grossVal: 0,
         comment: '',
     });
+    
     // next to the fields we need a receipt object to calc grossVal
-    const [receipt, setReceipt] = useState(new Receipt(
-        state.receiptDate,
-        state.description,
-        state.project,
-        state.netVal,
-        state.ust,
-        state.comment)
-    );
+    const [receipt, setReceipt] = useState(new Receipt(...Object.values(state)));
+    const [grossVal, setGrossVal] = useState(receipt.grossVal);
+    
+    useEffect(() => {
+        setGrossVal(receipt.grossVal);
+    }, [receipt.grossVal]);
 
     const [disabledSubmit, setDisabledSubmit] = useState(true);
             
@@ -135,7 +133,7 @@ const ReceiptForm = props => {
                         id="grossVal"
                         type="text"
                         disabled
-                        value={receipt.grossVal}
+                        value={grossVal}
                     />
                 </div>
                 <div className="mb-3">
