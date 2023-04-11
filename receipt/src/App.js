@@ -8,7 +8,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 const App = props => {
   const [projectTypes, setProjectTypes] = useState([]);
   const [ustTypes, setUSTTypes] = useState([]);
-  const [receiptService, setReceiptService] = useState(new ReceiptService());
+  const [receiptService,] = useState(new ReceiptService());
   const receiptStorageService = new ReceiptStorageService(receiptService);
   const [receipts, setReceipts] = useState(receiptService.receipts);
 
