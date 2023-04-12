@@ -1,7 +1,8 @@
 export const receiptsGroupedAndSummedByDates = (receipts) => {
     return receipts.reduce((date, receipt) => {
         const {receiptDate} = receipt;
-        const dateKey = receiptDate.setHours(0,0,0,0);
+        // create Date flattend to days
+        const dateKey = new Date(receiptDate).setHours(0,0,0,0);
         date[dateKey] = date[dateKey] || 0;
         date[dateKey] += receipt.netVal;
         return date;
@@ -11,7 +12,8 @@ export const receiptsGroupedAndSummedByDates = (receipts) => {
 export const receiptsGroupedAndSummedByMonths = (receipts) => {
     return receipts.reduce((dates, receipt) => {
         const {receiptDate} = receipt;
-        const dateKey = `${receiptDate.getFullYear()}.${receiptDate.getMonth()+1}`;
+        // set all dates of the current month to first day flattens to the month and keeps the date object as a key
+        const dateKey = new Date(receiptDate).setDate(1);
         dates[dateKey] = dates[dateKey] || 0;
         dates[dateKey] += receipt.netVal;
         return dates;

@@ -18,7 +18,7 @@ const KPIBarChartReceiptsGroupedByDates = (props) => {
         type: "bar",
         showBackground: true,
         smooth: true,
-        data: Object.entries(groupedData).map(entry => Object.assign(entry, { 0: +entry[0], 1: parseInt(entry[1]) })),
+        data: Object.entries(groupedData).map(entry => Object.assign(entry, { 0: parseInt(entry[0]), 1: entry[1].toFixed(2) })),
       }
     ],
     tooltip: {

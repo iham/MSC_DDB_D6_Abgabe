@@ -34,18 +34,22 @@ const StatsPage = (props) => {
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Date</h4>
                             <KPIBarChartReceiptsGroupedByDates groupedData={resGroupedAndSummedByDates}/>
+                            {/* {!resGroupedAndSummedByDates && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Month</h4>
                             <KPIBarChartReceiptsGroupedByMonths groupedData={resGroupedAndSummedByMonths}/>
+                            {/* {!resGroupedAndSummedByMonths && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Project</h4>
                             <KPIBarChartReceiptsGroupedByProjects groupedData={resGroupedAndSummedByProjects}/>
+                            {/* {!resGroupedAndSummedByProjects && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Distributed by Project</h4>
                             <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph" className="img-fluid" alt=""></img>
+                            {/* {!resGroupedAndSummedByProjects && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
                         </div>
 
                     </div>

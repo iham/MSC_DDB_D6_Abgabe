@@ -7,7 +7,7 @@ const KPIBarChartReceiptsGroupedByProjects = props => {
     grid: { top: 20, right: 40, bottom: 20, left: 60 },
     xAxis: {
       type: "category",
-      data: Object.keys(groupedData),
+      data: Object.keys(groupedData).sort(),
     },
     yAxis: {
       type: "value"

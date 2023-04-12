@@ -6,9 +6,9 @@ const KPIBarChartReceiptsGroupedByMonths = (props) => {
   const options = {
     grid: { top: 20, right: 40, bottom: 20, left: 60 },
     xAxis: [{
-      type: "category",
+      type: "time",
       axisLabel: {
-        formatter: '{value}',
+        formatter: '{MM}.{yyyy}',
       },
     }],
     yAxis: {
@@ -19,7 +19,7 @@ const KPIBarChartReceiptsGroupedByMonths = (props) => {
         type: "line",
         step: "start",
         smooth: true,
-        data: Object.entries(groupedData).map(entry => Object.assign(entry, { 0: entry[0], 1: parseInt(entry[1]) })),
+        data: Object.entries(groupedData).map(entry => Object.assign(entry, { 0: parseInt(entry[0]), 1: entry[1].toFixed(2) })),
       }
     ],
 
@@ -36,10 +36,10 @@ const KPIBarChartReceiptsGroupedByMonths = (props) => {
       trigger: "axis"
     },
 
-    legend: {
-      data: ["2023/03", "2023/02", "2023/04"],
-      bottom: 5
-    }
+    // legend: {
+    //   data: ["2023/03", "2023/02", "2023/04"],
+    //   bottom: 5
+    // }
 
 
   }
