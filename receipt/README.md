@@ -1,4 +1,3 @@
-![logo](./public/logo512.png)
 
 # Receipt Collector
 
