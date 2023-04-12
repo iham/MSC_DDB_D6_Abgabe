@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import KPIBarChartReceiptsGroupedByProjects from "./component/KPIBarChartReceiptsGroupedByProjects";
-import KPIBarChartReceiptsSortedByDates from "./component/KPIBarChartReceiptsSortedByDates";
+import KPIBarChartReceiptsGroupedByDates from "./component/KPIBarChartReceiptsGroupedByDates";
 
 import {receiptsGroupedAndSummedByDates, receiptsGroupedAndSummedByMonths, receiptsGroupedAndSummedByProjects, receiptsGroupedAndPercentagedByProjects} from './services/ReceiptStatsService';
 
@@ -31,8 +31,8 @@ const StatsPage = (props) => {
                 <div className="col col-lg-10">
                     <div className="row g-5">
                         <div className="col-md-6 p-md-5">
-                            <h4>Sorted by Date</h4>
-                            <KPIBarChartReceiptsSortedByDates groupedData={resGroupedAndSummedByDates}/>
+                            <h4>Grouped by Date</h4>
+                            <KPIBarChartReceiptsGroupedByDates groupedData={resGroupedAndSummedByDates}/>
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Month</h4>
