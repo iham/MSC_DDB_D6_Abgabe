@@ -1,7 +1,7 @@
 import ReactEcharts from "echarts-for-react";
 
 
-const KPIBarChartGroupedByProject = props => {
+const KPIBarChartReceiptsGroupedByProjects = props => {
   const {groupedData} = props;
   const options = {
     grid: { top: 20, right: 40, bottom: 20, left: 60 },
@@ -32,4 +32,4 @@ const KPIBarChartGroupedByProject = props => {
 
 };
 
-export default KPIBarChartGroupedByProject;
+export default KPIBarChartReceiptsGroupedByProjects;

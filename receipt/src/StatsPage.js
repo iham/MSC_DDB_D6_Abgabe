@@ -1,12 +1,13 @@
 import { useOutletContext } from "react-router-dom";
-import KPIBarChartGroupedByProject from "./component/KPIBarChartGroupedByProject";
+import KPIBarChartReceiptsGroupedByProjects from "./component/KPIBarChartReceiptsGroupedByProjects";
+import KPIBarChartReceiptsSortedByDates from "./component/KPIBarChartReceiptsSortedByDates";
 
 import {receiptsGroupedAndSummedByDates, receiptsGroupedAndSummedByMonths, receiptsGroupedAndSummedByProjects, receiptsGroupedAndPercentagedByProjects} from './services/ReceiptStatsService';
 
 const StatsPage = (props) => {
     const [projectTypes, ustTypes, receiptService, receiptStorageService, receipts, setReceipts] = useOutletContext();
 
-    const ressGroupedAndSummedByDate = receiptsGroupedAndSummedByDates(receipts);
+    const resGroupedAndSummedByDates = receiptsGroupedAndSummedByDates(receipts);
     const resGroupedAndSummedByMonths = receiptsGroupedAndSummedByMonths(receipts);
     const resGroupedAndSummedByProjects = receiptsGroupedAndSummedByProjects(receipts);
     // const receiptsGroupedAndPercentagedByProjects = receiptsGroupedAndPercentagedByProjects(receipts);
@@ -31,7 +32,7 @@ const StatsPage = (props) => {
                     <div className="row g-5">
                         <div className="col-md-6 p-md-5">
                             <h4>Sorted by Date</h4>
-                            <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph" className="img-fluid" alt=""></img>
+                            <KPIBarChartReceiptsSortedByDates groupedData={resGroupedAndSummedByDates}/>
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Month</h4>
@@ -39,7 +40,7 @@ const StatsPage = (props) => {
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Project</h4>
-                            <KPIBarChartGroupedByProject groupedData={resGroupedAndSummedByProjects}/>
+                            <KPIBarChartReceiptsGroupedByProjects groupedData={resGroupedAndSummedByProjects}/>
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Distributed by Project</h4>
