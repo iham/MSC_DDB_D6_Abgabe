@@ -13,17 +13,17 @@ const KPIBarChartReceiptsGroupedByDates = (props) => {
     yAxis: {
       type: "value"
     },
-    dataZoom: [
-      {
-        type: 'inside',
-        start: 0,
-        end: 10
-      },
-      {
-        start: 0,
-        end: 10
-      }
-    ],
+    // dataZoom: [
+    //   {
+    //     type: 'inside',
+    //     start: 0,
+    //     end: 10
+    //   },
+    //   {
+    //     start: 0,
+    //     end: 10
+    //   }
+    // ],
     series: [
       {
         type: "bar",

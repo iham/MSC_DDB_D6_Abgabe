@@ -12,8 +12,8 @@ export const receiptsGroupedAndSummedByDates = (receipts) => {
 export const receiptsGroupedAndSummedByMonths = (receipts) => {
     return receipts.reduce((dates, receipt) => {
         const {receiptDate} = receipt;
-        // set all dates of the current month to first day flattens to the month and keeps the date object as a key
-        const dateKey = new Date(receiptDate).setDate(1);
+        // set all dates of the current month to first day and hour flattens to the month and keeps the date object as a key
+        const dateKey = new Date((new Date(receiptDate)).setHours(0,0,0,0)).setDate(1);
         dates[dateKey] = dates[dateKey] || 0;
         dates[dateKey] += receipt.netVal;
         return dates;
@@ -29,11 +29,11 @@ export const receiptsGroupedAndSummedByProjects = (receipts) => {
     }, {});
 }
 
-export const receiptsGroupedAndPercentagedByProjects = (receipts) => {
+export const receiptsDistributedByProjects = (receipts) => {
     return receipts.reduce((projects, receipt) => {
         const {project} = receipt;
-        projects[project] = projects[project] || {};
-        projects[project] = receipt.netVal;
+        projects[project] = projects[project] || 0;
+        projects[project] += 1;
         return projects;
     }, {});
 }
