@@ -3,7 +3,7 @@ const InfoPage = (props) => {
         <>
             <header>
                 <hgroup>
-                    <h1>Info Page</h1>
+                    <h1>Information</h1>
                     <h4 className="mb-5">MSC DDB D6</h4>
                 </hgroup>
             </header>

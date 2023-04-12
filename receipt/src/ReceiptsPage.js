@@ -15,7 +15,7 @@ const Receipts = (props) => {
             receiptService,
             projectTypes,
             ustTypes,
-            10
+            1000
         )
         setReceipts([...receiptService.receipts]);
         receiptStorageService.save();

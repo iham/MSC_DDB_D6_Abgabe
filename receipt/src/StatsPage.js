@@ -1,8 +1,16 @@
 import { useOutletContext } from "react-router-dom";
+import KPIBarChartGroupedByProject from "./component/KPIBarChartGroupedByProject";
+
+import {receiptsGroupedAndSummedByDates, receiptsGroupedAndSummedByMonths, receiptsGroupedAndSummedByProjects, receiptsGroupedAndPercentagedByProjects} from './services/ReceiptStatsService';
 
 const StatsPage = (props) => {
     const [projectTypes, ustTypes, receiptService, receiptStorageService, receipts, setReceipts] = useOutletContext();
 
+    const ressGroupedAndSummedByDate = receiptsGroupedAndSummedByDates(receipts);
+    const resGroupedAndSummedByMonths = receiptsGroupedAndSummedByMonths(receipts);
+    const resGroupedAndSummedByProjects = receiptsGroupedAndSummedByProjects(receipts);
+    // const receiptsGroupedAndPercentagedByProjects = receiptsGroupedAndPercentagedByProjects(receipts);
+    // debugger;
     return (
         <>
             <header>
@@ -31,7 +39,7 @@ const StatsPage = (props) => {
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Project</h4>
-                            <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph" className="img-fluid" alt=""></img>
+                            <KPIBarChartGroupedByProject groupedData={resGroupedAndSummedByProjects}/>
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Distributed by Project</h4>

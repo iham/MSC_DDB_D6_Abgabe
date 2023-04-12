@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Receipt Collector",
+  "name": "Receipt Collector App (MSC DDB D6 - Team International)",
   "icons": [
     {
       "src": "favicon.ico",

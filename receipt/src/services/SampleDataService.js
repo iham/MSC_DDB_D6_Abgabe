@@ -5,7 +5,7 @@ import Receipt from '../data/Receipt';
 const SampleDataService = (receiptService, projectTypes, ustTypes, amount) => {
     const dateMax = new Date();
     let dateMin = new Date();
-    dateMin.setFullYear(dateMin.getFullYear() - 3);
+    dateMin.setFullYear(dateMin.getFullYear() - 2);
     for (let i = 0; i < amount; i++) {
         let randomProject = projectTypes[
             Math.floor(Math.random()*projectTypes.length)
