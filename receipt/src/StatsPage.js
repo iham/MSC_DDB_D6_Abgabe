@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
-import KPIBarChartReceiptsGroupedByProjects from "./component/KPIBarChartReceiptsGroupedByProjects";
 import KPIBarChartReceiptsGroupedByDates from "./component/KPIBarChartReceiptsGroupedByDates";
+import KPIBarChartReceiptsGroupedByMonths from "./component/KPIBarChartReceiptsGroupedByMonths";
+import KPIBarChartReceiptsGroupedByProjects from "./component/KPIBarChartReceiptsGroupedByProjects";
 
 import {receiptsGroupedAndSummedByDates, receiptsGroupedAndSummedByMonths, receiptsGroupedAndSummedByProjects, receiptsGroupedAndPercentagedByProjects} from './services/ReceiptStatsService';
 
@@ -36,7 +37,7 @@ const StatsPage = (props) => {
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Month</h4>
-                            <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph" className="img-fluid" alt=""></img>
+                            <KPIBarChartReceiptsGroupedByMonths groupedData={resGroupedAndSummedByMonths}/>
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Grouped by Project</h4>

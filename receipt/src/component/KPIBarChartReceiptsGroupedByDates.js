@@ -9,7 +9,6 @@ const KPIBarChartReceiptsGroupedByDates = (props) => {
       axisLabel: {
         formatter: '{dd}.{MM}.{yyyy}',
       },
-      // data: Object.keys(groupedData).map(item => parseInt(item)),
     }],
     yAxis: {
       type: "value"
