@@ -12,7 +12,7 @@ const ReceiptForm = props => {
     const [state, setState] = useState({
         receiptDate: new Date(),
         description: '',
-        project: '',
+        project: props.projectTypes[0].name,
         netVal: 0,
         ust: props.ustTypes[0].value,
         comment: '',
@@ -31,8 +31,9 @@ const ReceiptForm = props => {
     const handleInput = (evt) => {
         // we need both updated ... state for display, receipt for calculations
         state[evt.target.name] = evt.target.value;
-        receipt[evt.target.name] = state[evt.target.name];
         setState({ ...state });
+
+        receipt[evt.target.name] = state[evt.target.name];
         setReceipt(receipt);
 
         // enable saving if requirements are fullfilled
@@ -61,7 +62,7 @@ const ReceiptForm = props => {
             <h2>Add new Receipt</h2>
             <form onSubmit={evt => handleSave(evt)} className="row g-3">
                 <div className="col-6">
-                    <label htmlFor="receiptDate" className="form-label">Date</label>
+                    <label htmlFor="receiptDate" className="form-label">Date *</label>
                     <DatePicker id="receiptDate"
                         selected={state.receiptDate}
                         onChange={date => handleDateInput(date)}
@@ -71,14 +72,13 @@ const ReceiptForm = props => {
                     />
                 </div>
                 <div className="col-6">
-                    <label htmlFor="project" className="form-label">Project</label>
+                    <label htmlFor="project" className="form-label">Project *</label>
                     <select className="form-select"
                         name="project"
                         id="project"
                         value={state.project}
                         onChange={evt => handleInput(evt)}
                     >
-                        <option value="">None</option>
                         {props.projectTypes.map((project, key) => {
                             return <option key={key}
                                 value={project.name}
@@ -89,7 +89,7 @@ const ReceiptForm = props => {
                     </select>
                 </div>
                 <div className="col-12">
-                    <label htmlFor="description" className="form-label">Description</label>
+                    <label htmlFor="description" className="form-label">Description *</label>
                     <input className="form-control"
                         id="description"
                         name="description"
@@ -100,7 +100,7 @@ const ReceiptForm = props => {
                     />
                 </div>
                 <div className="col-4">
-                    <label htmlFor="netVal" className="form-label">Net Value</label>
+                    <label htmlFor="netVal" className="form-label">Net Value *</label>
                     <input className="form-control"
                         id="netVal"
                         name="netVal"
@@ -113,7 +113,7 @@ const ReceiptForm = props => {
                     />
                 </div>
                 <div className="col-4">
-                    <label htmlFor="ust" className="form-label">UST</label>
+                    <label htmlFor="ust" className="form-label">UST *</label>
                     <select className="form-select"
                         name="ust"
                         id="ust"
@@ -145,6 +145,7 @@ const ReceiptForm = props => {
                         value={state.comment}
                     ></textarea>
                 </div>
+                <p>(Fields marked with "*" are required fields.)</p>
                 <div className="col-12 text-end">
                     <button className='btn btn-success m-3' disabled={disabledSubmit}
                         onClick={evt => handleSave(evt)}>Create Receipt</button>
