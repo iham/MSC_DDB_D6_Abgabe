@@ -61,6 +61,5 @@ Firefox Developer Edition (version 111)
 
 
 ## TODOS
-- required in form fields
 - error on form: no date -> button dis/enable
 - startpage from readme intro text including links to pages
