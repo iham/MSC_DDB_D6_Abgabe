@@ -28,7 +28,7 @@ This will start the project and you can visit it by opening a browser window by 
 ## Instructions
 
 * New receipts can be added on the *Receipts* page. Click on *Create Receipt* and enter the data of your receipt. You can add the date, select the project this receipt belongs to, add a description and a comment and fill in the net value. Select the respective tax option and the gross value is automatically calculated. After clicking the *Create Receipt* button, the new receipt is added to the Receipt List
-* The *Receipt List* shows all available receipts sorted by date. At the bottom of the list, the sum total of all receipts can be found. To view details for a specific receipt, click on the card icon for this receipt. Individual receipts can be deleted by clicking on the trash icon.
+* The *Receipt List* shows all available receipts sorted by date. At the bottom of the list, the sum total of all receipts can be found. To view the details of a specific receipt, click on the card icon for this receipt. Individual receipts can be deleted by clicking on the trash icon.
 * The data is visualized on the *Stats* page. Here you can view the receipt data in four different charts that are either grouped by date, month or by project.
 * The *Projects* page lists all the projects to which the individual receipts can be assigned to and additionally lists the activity status of each project.
 
@@ -58,3 +58,7 @@ Firefox Developer Edition (version 111)
 | react-datepicker  | ^4.11.0 | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
 | react-icons       | ^5.2.3  | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
 | react-router-dom  | ^6.10.0 | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
+
+## TODOS
+- error on form: no date -> button dis/enable
+- startpage from readme intro text including links to pages
