@@ -36,13 +36,13 @@ const StatsPage = (props) => {
                             <h4>Summed by Dates</h4>
                             <p>How much was spent per Day?</p>
                             {resSummedByDates.length > 0 && <ReceiptsSummedByDates data={resSummedByDates}/>}
-                            {!resSummedByDates.length > 0 && <img src="https://via.placeholder.com/1200x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
+                            {!resSummedByDates.length > 0 && <img src="https://via.placeholder.com/1600x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
                         </div>
                         <div className="col-md-12 p-md-5">
                             <h4>Summed by Month</h4>
                             <p>How much was spent per Month?</p>
                             {resSummedByMonths.length > 0 && <ReceiptsSummedByMonths data={resSummedByMonths}/>}
-                            {!resSummedByMonths.length > 0 && <img src="https://via.placeholder.com/1200x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
+                            {!resSummedByMonths.length > 0 && <img src="https://via.placeholder.com/1600x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Summed by Project</h4>
