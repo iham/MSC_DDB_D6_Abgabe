@@ -1,19 +1,19 @@
 import { useOutletContext } from "react-router-dom";
-import KPIBarChartReceiptsGroupedByDates from "./component/KPIBarChartReceiptsGroupedByDates";
-import KPIBarChartReceiptsGroupedByMonths from "./component/KPIBarChartReceiptsGroupedByMonths";
-import KPIBarChartReceiptsGroupedByProjects from "./component/KPIBarChartReceiptsGroupedByProjects";
-import KPIPieChartReceiptsDistributedByProjects from "./component/KPIPieChartReceiptsDistributedByProjects";
+import ReceiptsSummedByDates from "./component/chart/ReceiptsSummedByDates";
+import ReceiptsSummedByMonths from "./component/chart/ReceiptsSummedByMonths";
+import ReceiptsSummedByProjects from "./component/chart/ReceiptsSummedByProjects";
+import ReceiptsDistributedByProjects from "./component/chart/ReceiptsDistributedByProjects";
 
-import {receiptsGroupedAndSummedByDates, receiptsGroupedAndSummedByMonths, receiptsGroupedAndSummedByProjects, receiptsDistributedByProjects} from './services/ReceiptStatsService';
+import {summedByDates, summedByMonths, summedByProjects, distributedByProjects} from './services/ReceiptStatsService';
 
 const StatsPage = (props) => {
     const [projectTypes, ustTypes, receiptService, receiptStorageService, receipts] = useOutletContext();
 
-    const resGroupedAndSummedByDates = receiptsGroupedAndSummedByDates(receipts);
-    const resGroupedAndSummedByMonths = receiptsGroupedAndSummedByMonths(receipts);
-    const resGroupedAndSummedByProjects = receiptsGroupedAndSummedByProjects(receipts);
-    const resDistributedByProjects = receiptsDistributedByProjects(receipts);
-    // debugger;
+    const resSummedByDates = summedByDates(receipts);
+    const resSummedByMonths = summedByMonths(receipts);
+    const resSummedByProjects = summedByProjects(receipts);
+    const resDistributedByProjects = distributedByProjects(receipts);
+    // debugger
     return (
         <>
             <header>
@@ -33,29 +33,28 @@ const StatsPage = (props) => {
                 <div className="col">
                     <div className="row g-5">
                         <div className="col-md-12 p-md-5">
-                            <h4>Grouped by Date</h4>
+                            <h4>Summed by Dates</h4>
                             <p>How much was spent per Day?</p>
-                            <KPIBarChartReceiptsGroupedByDates groupedData={resGroupedAndSummedByDates}/>
-                            {/* {!resGroupedAndSummedByDates && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
+                            {resSummedByDates.length > 0 && <ReceiptsSummedByDates data={resSummedByDates}/>}
+                            {!resSummedByDates.length > 0 && <img src="https://via.placeholder.com/1200x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
                         </div>
                         <div className="col-md-12 p-md-5">
-                            <h4>Grouped by Month</h4>
+                            <h4>Summed by Month</h4>
                             <p>How much was spent per Month?</p>
-                            <KPIBarChartReceiptsGroupedByMonths groupedData={resGroupedAndSummedByMonths}/>
-                            {/* {!resGroupedAndSummedByMonths && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
+                            {resSummedByMonths.length > 0 && <ReceiptsSummedByMonths data={resSummedByMonths}/>}
+                            {!resSummedByMonths.length > 0 && <img src="https://via.placeholder.com/1200x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
                         </div>
                         <div className="col-md-6 p-md-5">
-                            <h4>Grouped by Project</h4>
+                            <h4>Summed by Project</h4>
                             <p>How much was spent per Project?</p>
-                            <KPIBarChartReceiptsGroupedByProjects groupedData={resGroupedAndSummedByProjects}/>
-                            {/* {!resGroupedAndSummedByProjects && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
+                            {resSummedByProjects.length > 0 && <ReceiptsSummedByProjects data={resSummedByProjects}/>}
+                            {!resSummedByProjects.length > 0 && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
                         </div>
                         <div className="col-md-6 p-md-5">
                             <h4>Distributed by Projects</h4>
                             <p>How many receipts were assigned per Project?</p>
-                            <KPIPieChartReceiptsDistributedByProjects groupedData={resDistributedByProjects} />
-                            {/* <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph" className="img-fluid" alt=""></img> */}
-                            {/* {!resGroupedAndSummedByProjects && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt=""></img>} */}
+                            {resDistributedByProjects.length > 0 && <ReceiptsDistributedByProjects data={resDistributedByProjects} />}
+                            {!resDistributedByProjects.length > 0 && <img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
                         </div>
 
                     </div>

@@ -1,22 +1,23 @@
 import ReactEcharts from "echarts-for-react";
 
 
-const KPIBarChartReceiptsGroupedByProjects = props => {
-  const {groupedData} = props;
+const ReceiptsSummedByProjects = props => {
+  const {data} = props;
   const options = {
     grid: { top: 20, right: 40, bottom: 20, left: 60 },
     xAxis: {
       type: "category",
-      data: Object.keys(groupedData).sort(),
     },
     yAxis: {
       type: "value"
     },
+    dataset: {
+      source: data,
+    },    
     series: [
       {
         type: "bar",
         smooth: true,
-        data: Object.values(groupedData).map(item => item.toFixed(2)),
       }
     ],
     tooltip: {
@@ -32,4 +33,4 @@ const KPIBarChartReceiptsGroupedByProjects = props => {
 
 };
 
-export default KPIBarChartReceiptsGroupedByProjects;
+export default ReceiptsSummedByProjects;

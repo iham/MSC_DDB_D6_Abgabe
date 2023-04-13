@@ -1,7 +1,7 @@
 import ReactEcharts from "echarts-for-react";
 
-const KPIBarChartReceiptsGroupedByMonths = (props) => {
-  const { groupedData } = props;
+const ReceiptsSummedByMonths = (props) => {
+  const { data } = props;
 
   const options = {
     grid: { top: 20, right: 40, bottom: 20, left: 60 },
@@ -15,7 +15,7 @@ const KPIBarChartReceiptsGroupedByMonths = (props) => {
       type: "value"
     },
     dataset: {
-      source: Object.entries(groupedData).map(entry => Object.assign(entry, { 0: parseInt(entry[0]), 1: entry[1].toFixed(2) })),
+      source: data,
       dimensions: ['timestamp', 'netValSum'],
     },
     // dataZoom: [
@@ -60,4 +60,4 @@ const KPIBarChartReceiptsGroupedByMonths = (props) => {
 
 };
 
-export default KPIBarChartReceiptsGroupedByMonths;
+export default ReceiptsSummedByMonths;
