@@ -58,3 +58,9 @@ Firefox Developer Edition (version 111)
 | react-datepicker  | ^4.11.0 | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
 | react-icons       | ^5.2.3  | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
 | react-router-dom  | ^6.10.0 | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
+
+
+## TODOS
+- required in form fields
+- error on form: no date -> button dis/enable
+- startpage from readme intro text including links to pages

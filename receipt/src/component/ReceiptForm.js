@@ -12,7 +12,7 @@ const ReceiptForm = props => {
     const [state, setState] = useState({
         receiptDate: new Date(),
         description: '',
-        project: '',
+        project: props.projectTypes[0].name,
         netVal: 0,
         ust: props.ustTypes[0].value,
         comment: '',
@@ -78,7 +78,6 @@ const ReceiptForm = props => {
                         value={state.project}
                         onChange={evt => handleInput(evt)}
                     >
-                        <option value="">None</option>
                         {props.projectTypes.map((project, key) => {
                             return <option key={key}
                                 value={project.name}

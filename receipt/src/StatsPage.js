@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import ReceiptsSummedByDates from "./component/chart/ReceiptsSummedByDates";
 import ReceiptsSummedByMonths from "./component/chart/ReceiptsSummedByMonths";
 import ReceiptsSummedByProjects from "./component/chart/ReceiptsSummedByProjects";
@@ -13,7 +13,7 @@ const StatsPage = (props) => {
     const resSummedByMonths = summedByMonths(receipts);
     const resSummedByProjects = summedByProjects(receipts);
     const resDistributedByProjects = distributedByProjects(receipts);
-    // debugger
+    const receiptsInfo = receipts.length > 0 ? `${receipts.length} Receipts (from ${receipts[receipts.length - 1].receiptDate.toLocaleDateString('de-AT')} to ${receipts[0].receiptDate.toLocaleDateString('de-AT')})` : "Receipts";
     return (
         <>
             <header>
@@ -27,7 +27,7 @@ const StatsPage = (props) => {
                     <img src="./images/echarts_logo.png" alt="Apache ECharts" className="img-fluid"/>
                 </div>
             </div>
-            <p className="lead">Using Apache ECharts for some visuals.</p>
+            <p className="lead">Using Apache ECharts for visualising {receiptsInfo}</p>
             
             <div className="row justify-content-md-center">
                 <div className="col">
