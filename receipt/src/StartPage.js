@@ -28,7 +28,7 @@ const StartPage = (props) => {
             <p>All available receipts can be viewed in the <Link to="/receipts">Receipt List</Link>, where the receipts are sorted by date. Here, detailed information for each receipt can be viewed and individual receipts can also be deleted. Additionally, the sum total of all receipts is calculated and shown at the bottom of the list.</p>
             <p>On the <Link to="/stats">Stats</Link> page, receipt data is visually displayed using ECharts in four different viewing options.</p>
             <p>The <Link to="/projects">Projects</Link> page shows all the projects to which the individual receipts can be assigned to and additionally lists the status of each project.</p>
-
+            <p>Documentation for this project can be found in the <a href="/docs/" target="_blank">JSDocs</a>.</p>
         </>
     );
 };
