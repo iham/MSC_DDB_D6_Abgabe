@@ -1,4 +1,4 @@
-import { useOutletContext, Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import ReceiptsSummedByDates from "./component/chart/ReceiptsSummedByDates";
 import ReceiptsSummedByMonths from "./component/chart/ReceiptsSummedByMonths";
 import ReceiptsSummedByProjects from "./component/chart/ReceiptsSummedByProjects";

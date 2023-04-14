@@ -80,6 +80,13 @@ const App = props => {
                     Info
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <a className="nav-link"
+                  target="_blank"
+                  href="/docs">
+                    Docs
+                </a>
+              </li>
             </ul>
           </div>
         </div>
