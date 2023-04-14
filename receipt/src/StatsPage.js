@@ -6,6 +6,14 @@ import ReceiptsDistributedByProjects from "./component/chart/ReceiptsDistributed
 
 import {summedByDates, summedByMonths, summedByProjects, distributedByProjects} from './services/ReceiptStatsService';
 
+/**
+ * Description 
+ * @date 4/13/2023 - 8:20:27 PM
+ * @author Markus Hilbert (Functional Component & Data)
+ * @description Statistics for Receipts
+ * @param {*} props
+ * @returns {*}
+ */
 const StatsPage = (props) => {
     const [projectTypes, ustTypes, receiptService, receiptStorageService, receipts] = useOutletContext();
 

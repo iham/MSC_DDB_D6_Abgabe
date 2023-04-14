@@ -5,6 +5,22 @@ import ReceiptStorageService from './services/ReceiptStorageService';
 
 import { Outlet, NavLink } from 'react-router-dom';
 
+/**
+ * Generates a table head
+ * @author Markus (the Great) Hilbert <iham.com>
+ * @param {HTMLTableElement} table - The target HTML table
+ * @param {Array} data - The array of cell header names
+ * @return {void}
+ */
+
+/**
+ * Description placeholder
+ * @date 4/13/2023 - 8:35:04 PM
+ *
+ * @param {*} props
+ * @returns {*}
+ */
+
 const App = props => {
   const [projectTypes, setProjectTypes] = useState([]);
   const [ustTypes, setUSTTypes] = useState([]);

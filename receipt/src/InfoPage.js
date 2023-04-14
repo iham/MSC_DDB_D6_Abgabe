@@ -1,3 +1,13 @@
+
+/**
+ * Description 
+ * @date 4/13/2023 - 8:20:27 PM
+ * @author Markus Hilbert (Functional Component)
+ * @author Eric Langer (Content)
+ * @description Info-Page
+ * @param {*} props
+ * @returns {*}
+ */
 const InfoPage = (props) => {
     return (
         <>
@@ -20,16 +30,16 @@ const InfoPage = (props) => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Eric Langer</td>
-                            </tr>
-                            <tr>
-                                <td>Felix Ossmann</td>
-                            </tr>
-                            <tr>
                                 <td>Hannes Brottrager</td>
                             </tr>
                             <tr>
                                 <td>Markus Hilbert</td>
+                            </tr>
+                            <tr>
+                                <td>Eric Langer</td>
+                            </tr>
+                            <tr>
+                                <td>Felix Ossmann</td>
                             </tr>
                         </tbody>
                     </table>

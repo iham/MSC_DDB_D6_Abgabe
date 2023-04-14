@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Receipt Collector</h1>
+<p>MSc DDB D6</p>
+<p>Welcome!</p>
+<p>Receipt Collector is a React web app that allows users to organize their receipts. New receipt data can be added through a form that also automatically calculates the selected taxes. All available receipts can be viewed in the <em>Receipt List</em>, where the receipts are sorted by date. Here, detailed information for each receipt can be viewed and individual receipts can also be deleted. Additionally, the sum total of all receipts is calculated and shown at the bottom of the list. On the <em>Stats</em> page, receipt data is visually displayed using ECharts in four different viewing options. The <em>Projects</em> page shows all the projects to which the individual receipts can be assigned to and additionally lists the status of each project.</p>
+<p>This project was developed by Group International</p>
+<h2>Install &amp; Run</h2>
+<p>After unpack change into project directory and run:</p>
+<pre class="prettyprint source lang-bash"><code>yarn install
+</code></pre>
+<pre class="prettyprint source lang-bash"><code>yarn start
+</code></pre>
+<p>This will start the project and you can visit it by opening a browser window by entering <code>localhost:3000</code></p>
+<h2>Instructions</h2>
+<ul>
+<li>New receipts can be added on the <em>Receipts</em> page. Click on <em>Create Receipt</em> and enter the data of your receipt. You can add the date, select the project this receipt belongs to, add a description and a comment and fill in the net value. Select the respective tax option and the gross value is automatically calculated. After clicking the <em>Create Receipt</em> button, the new receipt is added to the Receipt List</li>
+<li>The <em>Receipt List</em> shows all available receipts sorted by date. At the bottom of the list, the sum total of all receipts can be found. To view the details of a specific receipt, click on the card icon for this receipt. Individual receipts can be deleted by clicking on the trash icon.</li>
+<li>The data is visualized on the <em>Stats</em> page. Here you can view the receipt data in four different charts that are either grouped by date, month or by project.</li>
+<li>The <em>Projects</em> page lists all the projects to which the individual receipts can be assigned to and additionally lists the activity status of each project.</li>
+</ul>
+<p>Data is kept in local storage.</p>
+<h2>Time spent</h2>
+<p>~40h were used to create this project.</p>
+<h2>Development Browser</h2>
+<p>Firefox Developer Edition (version 111)</p>
+<h2>Code and Documentation</h2>
+<p>Code, Versioning and Documentation can be found on <a href="https://github.com/iham/MSC_DDB_D6_Abgabe">GitHub</a>.</p>
+<h2>Libraries used</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Version</th>
+<th>License</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bootstrap</td>
+<td>^5.2.3</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>cross-env</td>
+<td>^7.0.3</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>echarts</td>
+<td>^5.4.2</td>
+<td><a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>echarts-for-react</td>
+<td>^3.0.2</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>faker-js</td>
+<td>^7.6.0</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>jsdoc</td>
+<td>^4.0.2</td>
+<td><a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>react</td>
+<td>^18.2.0</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>react-datepicker</td>
+<td>^4.11.0</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>react-icons</td>
+<td>^5.2.3</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+<tr>
+<td>react-router-dom</td>
+<td>^6.10.0</td>
+<td><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>TODOS</h2>
+<ul>
+<li>urls to project pages (git or npm or official website)</li>
+<li>error on form: no date -&gt; button dis/enable</li>
+<li>startpage from readme intro text including links to pages</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#InfoPage">InfoPage</a></li><li><a href="global.html#ReceiptsDistributedByProjects">ReceiptsDistributedByProjects</a></li><li><a href="global.html#ReceiptsSummedByProjects">ReceiptsSummedByProjects</a></li><li><a href="global.html#StartPage">StartPage</a></li><li><a href="global.html#StatsPage">StatsPage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Apr 14 2023 08:45:39 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

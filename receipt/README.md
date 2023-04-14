@@ -36,30 +36,32 @@ Data is kept in local storage.
 
 
 ## Time spent
-
-~20h were used to create this project.
+~40h were used to create this project.
 
 
 ## Development Browser
-
 Firefox Developer Edition (version 111)
 
+## Code and Documentation
+Code, Versioning and Documentation can be found on [GitHub](https://github.com/iham/MSC_DDB_D6_Abgabe).
 
 ## Libraries used
 
-| Name              | Version | License            | URL |
-|-------------------|---------|--------------------|-----|
-| bootstrap         | ^5.2.3  | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
-| cross-env         | ^7.0.3  | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
-| echarts           | ^5.4.2  | Apache License 2.0 | [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)|
-| echarts-for-react | ^3.0.2  | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
-| faker-js          | ^7.6.0  | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
-| react             | ^18.2.0 | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
-| react-datepicker  | ^4.11.0 | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
-| react-icons       | ^5.2.3  | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
-| react-router-dom  | ^6.10.0 | MIT License        | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)|
+| Name              | Version | License                                                                                                            | URL |
+|-------------------|---------|--------------------------------------------------------------------------------------------------------------------|-----|
+| bootstrap         | ^5.2.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
+| cross-env         | ^7.0.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
+| echarts           | ^5.4.2  | [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) |     |
+| echarts-for-react | ^3.0.2  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
+| faker-js          | ^7.6.0  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
+| jsdoc             | ^4.0.2  | [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) |     |
+| react             | ^18.2.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
+| react-datepicker  | ^4.11.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
+| react-icons       | ^5.2.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
+| react-router-dom  | ^6.10.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        |     |
 
 
 ## TODOS
+- urls to project pages (git or npm or official website)
 - error on form: no date -> button dis/enable
 - startpage from readme intro text including links to pages

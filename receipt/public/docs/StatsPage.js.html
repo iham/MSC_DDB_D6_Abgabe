@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: StatsPage.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: StatsPage.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useOutletContext, Link } from "react-router-dom";
+import ReceiptsSummedByDates from "./component/chart/ReceiptsSummedByDates";
+import ReceiptsSummedByMonths from "./component/chart/ReceiptsSummedByMonths";
+import ReceiptsSummedByProjects from "./component/chart/ReceiptsSummedByProjects";
+import ReceiptsDistributedByProjects from "./component/chart/ReceiptsDistributedByProjects";
+
+import {summedByDates, summedByMonths, summedByProjects, distributedByProjects} from './services/ReceiptStatsService';
+
+/**
+ * Description 
+ * @date 4/13/2023 - 8:20:27 PM
+ * @author Markus Hilbert (Functional Component &amp; Data)
+ * @description Statistics for Receipts
+ * @param {*} props
+ * @returns {*}
+ */
+const StatsPage = (props) => {
+    const [projectTypes, ustTypes, receiptService, receiptStorageService, receipts] = useOutletContext();
+
+    const resSummedByDates = summedByDates(receipts);
+    const resSummedByMonths = summedByMonths(receipts);
+    const resSummedByProjects = summedByProjects(receipts);
+    const resDistributedByProjects = distributedByProjects(receipts);
+    const receiptsInfo = receipts.length > 0 ? `${receipts.length} Receipts (from ${receipts[receipts.length - 1].receiptDate.toLocaleDateString('de-AT')} to ${receipts[0].receiptDate.toLocaleDateString('de-AT')})` : "Receipts";
+    return (
+        &lt;>
+            &lt;header>
+                &lt;hgroup>
+                    &lt;h1>Statistics&lt;/h1>
+                    &lt;h4 className="mb-5">MSC DDB D6&lt;/h4>
+                &lt;/hgroup>
+            &lt;/header>
+            &lt;div className="row">
+                &lt;div className="col-6 col-md-3">
+                    &lt;img src="./images/echarts_logo.png" alt="Apache ECharts" className="img-fluid"/>
+                &lt;/div>
+            &lt;/div>
+            &lt;p className="lead">Using Apache ECharts for visualising {receiptsInfo}&lt;/p>
+            
+            &lt;div className="row justify-content-md-center">
+                &lt;div className="col">
+                    &lt;div className="row g-5">
+                        &lt;div className="col-md-12 p-md-5">
+                            &lt;h4>Summed by Dates&lt;/h4>
+                            &lt;p>How much was spent per Day?&lt;/p>
+                            {resSummedByDates.length > 0 &amp;&amp; &lt;ReceiptsSummedByDates data={resSummedByDates}/>}
+                            {!resSummedByDates.length > 0 &amp;&amp; &lt;img src="https://via.placeholder.com/1600x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
+                        &lt;/div>
+                        &lt;div className="col-md-12 p-md-5">
+                            &lt;h4>Summed by Month&lt;/h4>
+                            &lt;p>How much was spent per Month?&lt;/p>
+                            {resSummedByMonths.length > 0 &amp;&amp; &lt;ReceiptsSummedByMonths data={resSummedByMonths}/>}
+                            {!resSummedByMonths.length > 0 &amp;&amp; &lt;img src="https://via.placeholder.com/1600x400/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
+                        &lt;/div>
+                        &lt;div className="col-md-6 p-md-5">
+                            &lt;h4>Summed by Project&lt;/h4>
+                            &lt;p>How much was spent per Project?&lt;/p>
+                            {resSummedByProjects.length > 0 &amp;&amp; &lt;ReceiptsSummedByProjects data={resSummedByProjects}/>}
+                            {!resSummedByProjects.length > 0 &amp;&amp; &lt;img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
+                        &lt;/div>
+                        &lt;div className="col-md-6 p-md-5">
+                            &lt;h4>Distributed by Projects&lt;/h4>
+                            &lt;p>How many receipts were assigned per Project?&lt;/p>
+                            {resDistributedByProjects.length > 0 &amp;&amp; &lt;ReceiptsDistributedByProjects data={resDistributedByProjects} />}
+                            {!resDistributedByProjects.length > 0 &amp;&amp; &lt;img src="https://via.placeholder.com/1200x1200/cccccc/969696?text=Graph+Placeholder+(no+Data)" className="img-fluid" alt="Graph Placeholder (no Data)" />}
+                        &lt;/div>
+
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/>
+    );
+};
+
+export default StatsPage;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#InfoPage">InfoPage</a></li><li><a href="global.html#ReceiptsDistributedByProjects">ReceiptsDistributedByProjects</a></li><li><a href="global.html#ReceiptsSummedByProjects">ReceiptsSummedByProjects</a></li><li><a href="global.html#StartPage">StartPage</a></li><li><a href="global.html#StatsPage">StatsPage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Apr 14 2023 08:45:39 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
