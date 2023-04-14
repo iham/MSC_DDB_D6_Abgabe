@@ -22,6 +22,7 @@ const ReceiptForm = props => {
     const [receipt, setReceipt] = useState(new Receipt(...Object.values(state)));
     const [grossVal, setGrossVal] = useState(receipt.grossVal);
 
+    // when the grossVal inside the receipt changes, the state needs to change too
     useEffect(() => {
         setGrossVal(receipt.grossVal);
     }, [receipt.grossVal]);
@@ -35,13 +36,16 @@ const ReceiptForm = props => {
 
         receipt[evt.target.name] = state[evt.target.name];
         setReceipt(receipt);
+    }
 
-        // enable saving if requirements are fullfilled
+    // enable or disable submit button
+    useEffect(() => {
         if (state.receiptDate && state.description && state.netVal && state.ust)
             setDisabledSubmit(false);
         else
             setDisabledSubmit(true);
-    }
+
+    }, [state.receiptDate, state.description, state.netVal, state.ust]);
 
     const handleDateInput = (date) => {
         // we need both updated ... state for display, receipt for calculations

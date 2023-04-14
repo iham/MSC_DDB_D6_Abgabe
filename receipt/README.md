@@ -59,4 +59,3 @@ Code, Versioning and Documentation can be found on [GitHub](https://github.com/i
 
 ## TODOS
 - urls to project pages (git or npm or official website)
-- error on form: no date -> button dis/enable
