@@ -3,7 +3,7 @@
  * Description 
  * @date 4/13/2023 - 8:20:27 PM
  * @author Markus Hilbert (Functional Component)
- * @author Eric Langer (Content)
+ * @author Felix Ossmann (Content)
  * @description Info-Page
  * @param {*} props
  * @returns {*}
