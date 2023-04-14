@@ -15,6 +15,7 @@ import {summedByDates, summedByMonths, summedByProjects, distributedByProjects} 
  * @returns {*}
  */
 const StatsPage = (props) => {
+    // eslint-disable-next-line no-unused-vars
     const [projectTypes, ustTypes, receiptService, receiptStorageService, receipts] = useOutletContext();
 
     const resSummedByDates = summedByDates(receipts);
