@@ -137,7 +137,7 @@ const ReceiptForm = props => {
                         id="grossVal"
                         type="text"
                         disabled
-                        value={grossVal}
+                        value={grossVal.toFixed(2)}
                     />
                 </div>
                 <div className="col-12">

@@ -26,6 +26,7 @@ This will start the project and you can visit it by opening a browser window by 
 * The *Projects* page lists all the projects to which the individual receipts can be assigned to and additionally lists the activity status of each project.
 
 Data is kept in local storage.
+Data for project and UST types are delivered via JSON files.
 
 ## Time spent
 ~50h were used to create this project.

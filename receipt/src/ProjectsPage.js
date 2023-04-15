@@ -14,10 +14,10 @@ const Projects = (props) => {
                 A List of the Projects you can assign Receipts to:
             </p>
             {projectTypes && 
-                <ul className="list-group">
+                <ul className="list-group col-md-6">
                     {projectTypes.map((item, key) => {
                         return <li key={'project_type_key_'+key}
-                            className={`list-group-item ${!item.active ? 'disabled' : ''}`}>{item.name} ({!item.active ? 'Inactive' : 'Active'})</li>
+                            className={`list-group-item ${!item.active ? 'list-group-item-danger' : 'list-group-item-success'}`}>{item.name} ({!item.active ? 'Inactive' : 'Active'})</li>
                     })}
                 </ul>
             }

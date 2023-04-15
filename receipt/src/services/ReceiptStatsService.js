@@ -1,9 +1,14 @@
 export const summedByDates = (receipts) => {
+    // receipts are an array of objects [{...},{...},{...}, ...]
+    // we use reduce to iterate 
     const data = receipts.reduce((date, receipt) => {
+        // pick date of receipt
         const {receiptDate} = receipt;
         // create Date flattend to days
         const dateKey = new Date(receiptDate).setHours(0,0,0,0);
+        // create key and set to 0 or recreate key and set to previous value
         date[dateKey] = date[dateKey] || 0;
+        // add netVal to existing Values
         date[dateKey] += receipt.netVal;
         return date;
     }, {});

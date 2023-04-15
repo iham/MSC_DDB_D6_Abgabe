@@ -17,15 +17,58 @@ const ReceiptItemModal = (props) => {
                     </div>
                     <div className="modal-body">
                         {receipt &&
-                            <>
-                            {date && <p>Date: {date}</p>}
-                            {description && <p>Description: {description}</p>}
-                            {project && <p>Project: {project}</p>}
-                            {netVal && <p>NetVal: € {netVal}</p>}
-                            {ust >= 0 && <p>UST: {ust}%</p>}
-                            {grossVal && <p>GrossVal: € {grossVal}</p>}
-                            {comment && <p>Comment: {comment}</p>}
-                            </>
+                            <table className="table table-hover table-dark table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Field</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {date &&
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>{date}</td>
+                                        </tr>
+                                    }
+                                    {description &&
+                                        <tr>
+                                            <td>Description</td>
+                                            <td>{description}</td>
+                                        </tr>
+                                    }
+                                    {project &&
+                                        <tr>
+                                            <td>Project</td>
+                                            <td>{project}</td>
+                                        </tr>
+                                    }
+                                    {netVal &&
+                                        <tr>
+                                            <td>NetVal</td>
+                                            <td>{netVal}</td>
+                                        </tr>
+                                    }
+                                    {ust >= 0 &&
+                                        <tr>
+                                            <td>UST</td>
+                                            <td>{ust}%</td>
+                                        </tr>
+                                    }
+                                    {grossVal &&
+                                        <tr>
+                                            <td>GrossVal</td>
+                                            <td>{grossVal}</td>
+                                        </tr>
+                                    }
+                                    {comment &&
+                                        <tr>
+                                            <td>Comment</td>
+                                            <td>{comment}</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
                         }
                     </div>
                 </div>
