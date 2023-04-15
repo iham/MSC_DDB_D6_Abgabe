@@ -34,6 +34,9 @@ Data for project and UST types are delivered via JSON files.
 ## Development Browser
 Firefox Developer Edition (version 111)
 
+## Node
+Node is used in version v18.15.0
+
 ## Code and Documentation
 Code, Versioning and Documentation can be found on [GitHub](https://github.com/iham/MSC_DDB_D6_Abgabe).
 
