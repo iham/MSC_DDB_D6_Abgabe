@@ -43,18 +43,15 @@ Firefox Developer Edition (version 111)
 Code, Versioning and Documentation can be found on [GitHub](https://github.com/iham/MSC_DDB_D6_Abgabe).
 
 ## Libraries used
-| Name              | Version | License                                                                                                            | URL |
-|-------------------|---------|--------------------------------------------------------------------------------------------------------------------|-----|
-| bootstrap         | ^5.2.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://getbootstrap.com/) |
-| cross-env         | ^7.0.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://www.npmjs.com/package/cross-env) |
-| echarts           | ^5.4.2  | [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) | [Link](https://echarts.apache.org/en/index.html) |
-| echarts-for-react | ^3.0.2  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://www.npmjs.com/package/echarts-for-react) |
-| faker-js          | ^7.6.0  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://fakerjs.dev/) |
-| jsdoc             | ^4.0.2  | [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) | [Link](https://jsdoc.app/) |
-| react             | ^18.2.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://react.dev/) |
-| react-datepicker  | ^4.11.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://www.npmjs.com/package/react-datepicker) |
-| react-icons       | ^5.2.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://react-icons.github.io/react-icons/) |
-| react-router-dom  | ^6.10.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Link](https://reactrouter.com/en/main) |    
-
-
-## TODOS
+| Name              | Version | License                                                                                                            | URL                                                     |
+|-------------------|---------|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| bootstrap         | ^5.2.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [Bootstrap](https://getbootstrap.com/)                  |
+| cross-env         | ^7.0.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [NPM](https://www.npmjs.com/package/cross-env)          |
+| echarts           | ^5.4.2  | [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) | [Apache](https://echarts.apache.org/en/index.html)      |
+| echarts-for-react | ^3.0.2  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [NPM](https://www.npmjs.com/package/echarts-for-react)  |
+| faker-js          | ^7.6.0  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [FakerJS](https://fakerjs.dev/)                         |
+| jsdoc             | ^4.0.2  | [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) | [JSdoc](https://jsdoc.app/)                             |
+| react             | ^18.2.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [React](https://react.dev/)                             |
+| react-datepicker  | ^4.11.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [NPM](https://www.npmjs.com/package/react-datepicker)   |
+| react-icons       | ^5.2.3  | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [GitHub](https://react-icons.github.io/react-icons/)    |
+| react-router-dom  | ^6.10.0 | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        | [ReactRouter](https://reactrouter.com/en/main)          |
