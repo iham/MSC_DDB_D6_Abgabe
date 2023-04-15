@@ -1,4 +1,3 @@
-
 # Receipt Collector
 MSc DDB D6
 
@@ -8,10 +7,8 @@ Receipt Collector is a React web app that allows users to organize their receipt
 
 This project was developed by Group International
 
-
 ## Install & Run
 After unpack change into project directory and run:
-
 
 ```bash
 yarn install
@@ -22,7 +19,6 @@ yarn start
 ```
 This will start the project and you can visit it by opening a browser window by entering ```localhost:3000```
 
-
 ## Instructions
 * New receipts can be added on the *Receipts* page. Click on *Create Receipt* and enter the data of your receipt. You can add the date, select the project this receipt belongs to, add a description and a comment and fill in the net value. Select the respective tax option and the gross value is automatically calculated. After clicking the *Create Receipt* button, the new receipt is added to the Receipt List
 * The *Receipt List* shows all available receipts sorted by date. At the bottom of the list, the sum total of all receipts can be found. To view the details of a specific receipt, click on the card icon for this receipt. Individual receipts can be deleted by clicking on the trash icon.
@@ -31,10 +27,8 @@ This will start the project and you can visit it by opening a browser window by 
 
 Data is kept in local storage.
 
-
 ## Time spent
 ~50h were used to create this project.
-
 
 ## Development Browser
 Firefox Developer Edition (version 111)
